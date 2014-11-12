@@ -5,7 +5,7 @@
 
 <ul>
 {
-for $x in doc("../xml/jep2014.xml")/programmeDataEdition/fichesInscription/ficheInscription
+for $x in /programmeDataEdition/fichesInscription/ficheInscription
 order by $x/lieuNom
 return <li class="{data($x/lieuCodePostal)}">{data($x/lieuNom)}</li>
 }

@@ -3,7 +3,7 @@
 <html>
 <body>
 {
-for $x in doc("../xml/jep2014.xml")/programmeDataEdition/fichesInscription/ficheInscription
+for $x in /programmeDataEdition/fichesInscription/ficheInscription
 let $libelle := $x/offres/offre/themes/theme/libelle
 group by $libelle
 return <p> {data($libelle)} : {data($x/lieuNom)}</p> }
