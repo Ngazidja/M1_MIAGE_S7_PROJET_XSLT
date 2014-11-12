@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package servlets;
 
 import java.io.IOException;
@@ -9,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import basex.BaseXClient;
 
 /**
  * Servlet implementation class MyServlet
@@ -29,9 +30,13 @@ public class MyServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-
-		
+		PrintWriter out=response.getWriter();
+		out.print("ok �a marche 2014");
+		BaseXClient bd = new BaseXClient("localhost",1784,"admin","admin");
+		String res;
+		res =bd.execute("doc(../xml/jep2014.xml)/programmeDataEdition/fichesInscription/ficheInscription/lieuNom");
+		System.out.println(res);
+		System.out.println("hello");
 	}
 
 	/**
@@ -42,48 +47,4 @@ public class MyServlet extends HttpServlet {
 	}
 
 }
-=======
-package servlets;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-/**
- * Servlet implementation class MyServlet
- */
-@WebServlet("/MyServlet")
-public class MyServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public MyServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		PrintWriter out = response.getWriter();
-		out.print("Test MyServlet : doGet");
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
-
-}
->>>>>>> 5aad6e914b8eb5a7d613f8a49cbdba6cb4996ca9
