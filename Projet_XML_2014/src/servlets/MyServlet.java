@@ -30,13 +30,15 @@ public class MyServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("ok ça marche enfin 2014");
 		PrintWriter out=response.getWriter();
-		out.print("ok ï¿½a marche 2014");
-		BaseXClient bd = new BaseXClient("localhost",1784,"admin","admin");
+		out.print("ok marche 2014");
+		
+		/*BaseXClient bd = new BaseXClient("localhost",1784,"admin","admin");
 		String res;
 		res =bd.execute("doc(../xml/jep2014.xml)/programmeDataEdition/fichesInscription/ficheInscription/lieuNom");
 		System.out.println(res);
-		System.out.println("hello");
+		System.out.println("hello");*/
 	}
 
 	/**
