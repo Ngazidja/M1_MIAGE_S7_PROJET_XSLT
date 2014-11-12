@@ -47,16 +47,13 @@ function displayMap() {
 	var map = new google.maps.Map(document.getElementById('EmplacementDeLaPage'), mapOptions);
 
 	// ajout des emplacements des markers ds la map
-<<<<<<< HEAD
 	addMarker(myLatln,map,'Hello World : myLatln !');
 	addMarker(myLatlng,map,'Hello World : myLatlng !');
 	addMarker(_bordeau,map,'Hello World : myLatlng !');
 	
-=======
 	addMarker(myLatln,map,'Monaco');
 	addMarker(myLatlng,map,'Paris');
 	addMarker(_bordeau,map,'Marseille');
->>>>>>> f0ad7ed1f32ed68178e1b266b0db6bd5c7c14c41
 
 	// Chargement de la map
 	google.maps.event.addDomListener(window, 'load', displayMap);
@@ -69,21 +66,19 @@ function addMarker(_position,_map,_title){
 		position: _position,
 		map: _map,
 		title: _title
-<<<<<<< HEAD
 	});	
 	google.maps.event.addListener(marker, 'click', function() {
 		//alert(_title);
 	    map.setZoom(8);
 	    map.setCenter(marker.getPosition());
 	    infowindow.open(map, marker);
-	  });
-=======
-	});		  
+	});
+	
 	google.maps.event.addListener(marker, 'click', function() {
 		alert(_title);
 		_map.setZoom(8);
 		_map.setCenter(marker.getPosition());
 	});
->>>>>>> f0ad7ed1f32ed68178e1b266b0db6bd5c7c14c41
+
 }
 
